@@ -1,0 +1,50 @@
+@charset 'utf-8';
+
+html {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background: white;
+    color: rgb(29, 29, 31);
+    letter-spacing: -0.05em;
+}
+  
+.section {
+    position: relative;
+    padding-top: 50vh;
+}
+
+.sticky {
+    display: none;
+}
+
+#section-0 h1 {
+    position: relative;
+    z-index: 5;
+    top: -2vh;
+    font-size: 4rem;
+    text-align: center;
+}
+
+#veil {
+    position: relative;
+    color: white;
+    z-index: 10;
+}
+
+#show-scene-0 #section-0 .sticky {
+    display: block;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+}
+
+#video-canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
