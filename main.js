@@ -29,13 +29,21 @@
       objs: {
         container: document.querySelector("#section-1"),
       },
-    }
-    ,{
+    },
+    {
       // 사진
       scrollHeight: 0,
       type: "normal",
       objs: {
         container: document.querySelector("#section-2"),
+      },
+    },
+    {
+      // 지도
+      scrollHeight: 0,
+      type: "normal",
+      objs: {
+        container: document.querySelector("#section-3"),
       },
     }
   ];
