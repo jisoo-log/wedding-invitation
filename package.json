@@ -1,0 +1,22 @@
+{
+  "name": "wedding-invitation",
+  "description": "",
+  "version": "1.0.0",
+  "main": "main.js",
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-jisoo:jisoo-log/wedding-invitation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
+  },
+  "homepage": "http://jisoolee.dev.github.io/wedding-invitation/",
+}
