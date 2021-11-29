@@ -30,6 +30,14 @@
         container: document.querySelector("#section-1"),
       },
     }
+    ,{
+      // 사진
+      scrollHeight: 0,
+      type: "normal",
+      objs: {
+        container: document.querySelector("#section-2"),
+      },
+    }
   ];
 
   const addZero = (num) => {
@@ -38,7 +46,7 @@
 
   const setCanvasImages = () => {
     let imgElem;
-    for (let i = 1; i < scenes[0].values.videoImageCount; i++) {
+    for (let i = 1; i <= scenes[0].values.videoImageCount; i++) {
       imgElem = new Image();
       imgElem.src = `./images/out-${addZero(i)}.jpg`;
       scenes[0].objs.videoImages.push(imgElem);
@@ -133,13 +141,14 @@
 
     if (yOffset > prevScrollHeight + scenes[currentScene].scrollHeight) {
       enterNewScene = true;
+      if (currentScene === scenes.length - 1) return;
       currentScene++;
       document.body.setAttribute("id", `show-scene-${currentScene}`);
     }
 
     if (yOffset < prevScrollHeight) {
       enterNewScene = true;
-      if (currentScene === 0) return; // yOffset 이 음수가 되는 경우 방지
+      if (currentScene === 0) return;
       currentScene--;
       document.body.setAttribute("id", `show-scene-${currentScene}`);
     }
