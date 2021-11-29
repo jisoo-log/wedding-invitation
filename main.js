@@ -59,7 +59,8 @@
       if (scenes[i].type === "sticky") {
         scenes[i].scrollHeight = scenes[i].heightRatio * window.innerHeight;
       } else if (scenes[i].type === "normal") {
-        scenes[i].scrollHeight = scenes[i].objs.container.offsetHeight;
+        // scenes[i].scrollHeight = scenes[i].objs.container.offsetHeight;
+        scenes[i].scrollHeight = 700;
       }
       scenes[i].objs.container.style.height = `${scenes[i].scrollHeight}px`;
     }
