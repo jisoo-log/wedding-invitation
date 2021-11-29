@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -23,11 +27,54 @@
             <p>인사문구 여기에 넣기</p>
         </section>
         <section class="section" id="section-2">
-            
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="swiper-image/image0.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="swiper-image/image1.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="swiper-image/image2.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="swiper-image/image3.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="swiper-image/image4.jpg" />
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="swiper-image/image5.jpg" />
+                  </div>
+                  <div class="swiper-slide vertical">
+                    <img src="swiper-image/image6.jpg"/>
+                  </div>
+                  <div class="swiper-slide vertical">
+                    <img src="swiper-image/image7.jpg" />
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
         </section>
         <footer></footer>
     </div>
     <script src="main.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        spaceBetween: 20,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
 </body>
 
 </html>
