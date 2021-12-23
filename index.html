@@ -7,24 +7,39 @@
     <title>결혼합니다</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/reset.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
 </head>
 
 <body>
     <div class="container">
         <section class="section" id="section-0">
-            <h1>결혼합니다</h1>
-            <div class="sticky">
-                <canvas id="video-canvas" width="720" height="1280"></canvas>
+          <div class="sticky sticky-canvas">
+            <canvas id="video-canvas" width="720" height="1280"></canvas>
+          </div>
+          <div class="sticky message a">
+            <p class="main">결혼합니다</p>
+          </div>
+          <div class="sticky message b">
+            <div class="sub">
+              <p>2월 26일 토요일 12:30<br>엘루체컨벤션 6층 스텔라하우스</p>
             </div>
+          </div>
         </section>
         <section class="section" id="section-1">
-            <p>인사문구 여기에 넣기</p>
+          <div class="middle-message sub">
+            <p>차곡차곡 눈처럼 쌓아온 사랑이</p>
+            <p>어느덧 네 번째 겨울을 맞아</p>
+            <p>이제는 평생을 약속하려 합니다</p>
+            <p>저희 두 사람의 새로운 출발을</p>
+            <p>격려해주시고 축복해주시면 감사하겠습니다.</p>
+          </div>
         </section>
         <section class="section" id="section-2">
             <div class="swiper mySwiper">
@@ -64,22 +79,59 @@
         </section>
         <footer></footer>
     </div>
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wn1alsk6wi"></script>
     <script id="code">
+        var elluce = new naver.maps.LatLng(37.50180355734507, 126.98714909796672)
         var map = new naver.maps.Map('map', {
-            center: new naver.maps.LatLng(37.50180355734507, 126.98714909796672), //지도의 초기 중심 좌표
-            zoom: 17, //지도의 초기 줌 레벨
-            minZoom: 8, //지도의 최소 줌 레벨
-            zoomControl: true, //줌 컨트롤의 표시 여부
-            zoomControlOptions: { //줌 컨트롤의 옵션
-                position: naver.maps.Position.TOP_RIGHT
+          center: new naver.maps.LatLng(37.50180355734507, 126.98714909796672),
+          zoom: 17,
+          minZoom: 8, //지도의 최소 줌 레벨
+          zoomControl: true, //줌 컨트롤의 표시 여부
+          zoomControlOptions: { //줌 컨트롤의 옵션
+              position: naver.maps.Position.TOP_RIGHT
         }});
         var marker = new naver.maps.Marker({
-            position: new naver.maps.LatLng(37.50180355734507, 126.98714909796672),
+            icon: {
+              url: "./icon/heart-icon.png",
+              scaledSize: new naver.maps.Size(30, 37),
+              origin: new naver.maps.Point(0, 0),
+            },
+            position: elluce,
             map: map
         });
+
+        var contentString = [
+        '<div class="iw_inner" style="padding:5px; margin: 5px 0px 5px 0px; width: 150px; height: 45px; text-align: center; ">',
+        '   <p style="foint-size: 2rem; margin: 0;">엘루체컨벤션</p>',
+        '   <p style="font-size: 0.8rem; margin: 0;">서울 서초구 신반포로 23</p>',
+        '</div>'
+        ].join('');
+
+        var infowindow = new naver.maps.InfoWindow({
+            content: contentString,
+            maxWidth: 200,
+            height: 50,
+            backgroundColor: "white",
+            borderColor: "black",
+            borderWidth: 2,
+            disableAnchor: true,
+            textAlign: "center",
+            margin: "auto",
+
+            pixelOffset: new naver.maps.Point(0, -5)
+        });
+
+        naver.maps.Event.addListener(marker, "click", function(e) {
+            if (infowindow.getMap()) {
+                infowindow.close();
+            } else {
+                infowindow.open(map, marker);
+            }
+        });
+
+        infowindow.open(map, marker);
     </script>
 
     <!-- Initialize Swiper -->

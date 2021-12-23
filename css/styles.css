@@ -17,38 +17,73 @@ body {
     border: 1px solid black;
 }
 
+.middle-message {
+     text-align: center;
+     line-height: 1.5rem;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    height: 10em;
+    font-size: 1.5rem;
+    text-align: center;
+    opacity: 0;
+    font-weight: bold;
+}
+
+
+.message .main {
+    font-size: 3rem;
+}
+
+.message.b {
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    height: 13vh;
+    top: 70vh;
+    color: white;
+    width: 100%;
+    max-width: 720px;
+}
+
+.sub {
+    bottom: 0;
+    font-weight: normal;
+}
+
 .sticky {
     display: none;
-}
-
-#section-0 h1 {
-    position: relative;
-    z-index: 5;
-    top: 10vh;
-    font-size: 4rem;
-    text-align: center;
-}
-
-#veil {
-    position: relative;
-    color: white;
-    z-index: 10;
-}
-
-#show-scene-0 #section-0 .sticky {
-    display: block;
     position: fixed;
     left: 0;
     width: 100%;
+}
+
+
+#show-scene-0 #section-0 .sticky {
+    display: block;
+}
+
+.sticky-canvas {
     top: 0;
     height: 100%;
 }
 
-#video-canvas {
+.sticky canvas {
     position: absolute;
     top: 50%;
     left: 50%;
+    opacity: 0;
 }
+
+/* #video-canvas {
+    position: absolute;
+    opacity: 0;
+} */
 
 /* swiper */
 .swiper {
@@ -72,10 +107,10 @@ body {
 
 .swiper-pagination-bullet {
     background: gainsboro;
-      width: .4rem;
-      height: .4rem;
-      border-radius: .4rem;
-      opacity: 1;
+    width: .4rem;
+    height: .4rem;
+    border-radius: .4rem;
+    opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
@@ -88,4 +123,15 @@ body {
 
 #section-3 h1 {
     text-align: center;
+}
+
+@media (min-width: 1024px) {
+    .message .main {
+        font-size: 4rem;
+    }
+
+    .sub {
+        font-size: 2rem;
+    }
+
 }
