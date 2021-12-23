@@ -12,14 +12,22 @@
       type: "sticky",
       objs: {
         container: document.querySelector("#section-0"),
+        messageA: document.querySelector("#section-0 .message.a"),
+        messageB: document.querySelector("#section-0 .message.b"),
         canvas: document.querySelector("#video-canvas"),
         context: document.querySelector("#video-canvas").getContext("2d"),
         videoImages: [],
       },
       values: {
+        messageA_opacity_in: [0, 1, { start: 0, end: 0.05 }],
+        messageA_translateY_in: [0, -50, { start: 0.1, end: 0.2 }],
+        messageA_opacity_out: [1, 0, { start: 0.9, end: 1 }],
+        messageB_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
+        messageB_opacity_out: [1, 0, { start: 0.9, end: 1 }],
         videoImageCount: 141,
         imageSequence: [0, 140],
-        canvas_opacity: [1, 0, { start: 0.9, end: 1 }],
+        canvas_opacity1: [0, 0.8, { start: 0.1, end: 0.2 }],
+        canvas_opacity2: [0.8, 0, { start: 0.9, end: 1 }],
       },
     },
     {
@@ -122,8 +130,8 @@
     const objs = scenes[currentScene].objs;
     const values = scenes[currentScene].values;
     const currentYOffset = yOffset - prevScrollHeight;
-    // const scrollHeight = scenes[currentScene].scrollHeight;
-    // const scrollRatio = currentYOffset / scrollHeight; // 현재 씬의 scrollHeight;
+    const scrollHeight = scenes[currentScene].scrollHeight;
+    const scrollRatio = currentYOffset / scrollHeight; // 현재 씬의 scrollHeight;
 
     switch (currentScene) {
       case 0:
@@ -133,10 +141,39 @@
         console.log(sequence0);
         // 이미지, x, y
         objs.context.drawImage(objs.videoImages[sequence0], 0, 0);
-        objs.canvas.style.opacity = calcValues(
-          values.canvas_opacity,
-          currentYOffset
-        );
+
+        if (scrollRatio < 0.07) {
+          objs.messageA.style.opacity = calcValues(
+            values.messageA_opacity_in,
+            currentYOffset
+          );
+        } else if (scrollRatio < 0.25) {
+          objs.canvas.style.opacity = calcValues(
+            values.canvas_opacity1,
+            currentYOffset
+          );
+          objs.messageA.style.transform = `translateY(${calcValues(
+            values.messageA_translateY_in,
+            currentYOffset
+          )}%)`;
+          objs.messageB.style.opacity = calcValues(
+            values.messageB_opacity_in,
+            currentYOffset
+          );
+        } else {
+          objs.canvas.style.opacity = calcValues(
+            values.canvas_opacity2,
+            currentYOffset
+          );
+          objs.messageA.style.opacity = calcValues(
+            values.messageA_opacity_out,
+            currentYOffset
+          );
+          objs.messageB.style.opacity = calcValues(
+            values.messageB_opacity_out,
+            currentYOffset
+          );
+        }
         break;
     }
   }
