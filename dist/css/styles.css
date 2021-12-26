@@ -135,6 +135,16 @@ body {
     object-fit: cover;
 }
 
+.section-1__name {
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 3rem;
+}
+
+.light_color {
+    color: #FAF4F0;
+}
+
 @media (min-width: 1024px) {
     .message .main {
         font-size: 4rem;
