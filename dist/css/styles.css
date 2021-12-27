@@ -8,14 +8,14 @@ body {
     overflow-x: hidden;
     background: white;
     color: rgb(29, 29, 31);
-    letter-spacing: -0.05em;
+    /* letter-spacing: 0.05em; */
     line-height: 2rem;
 }
   
 .section {
     position: relative;
     padding-top: 30vh;
-    border: 1px solid black;
+    border: 1px solid #FAF4F0;
 }
 
 .message {
@@ -141,8 +141,79 @@ body {
     line-height: 3rem;
 }
 
-.light_color {
+.light-color {
     color: #FAF4F0;
+}
+
+.section-1__button {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0px;
+}
+
+.contact-button {
+    border: 1px solid #DF9889;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 40px;
+    margin-bottom: 50px;
+    border-radius: 40px;
+    background-color: white;
+    color: #DF9889;
+    box-shadow: 5px 5px 5px #FAF4F0;
+}
+
+.calendar {
+    width: 280px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.year-month {
+    font-size: 1.2rem;
+    height: 50px;
+    text-align: center;
+}
+
+.days {
+    display: flex;
+    /* margin: 25px 0; */
+}
+
+.line {
+    height: 1px;
+    width: 100%;
+    background-color: #FAF4F0;
+    margin: 10px 0;
+}
+  
+.day {
+    width: calc(100% / 7);
+    text-align: center;
+}
+
+.dates {
+    display: flex;
+    flex-flow: row wrap;
+    height: 205px;
+    align-items: center;
+}
+  
+.date {
+    width: calc(100% / 7);
+    height: calc(100% / 5);
+    text-align: center;
+    margin-bottom: 1px;
+    /* align-self: center; */
+}
+
+.selected {
+    background-color: #DF9889;
+    color: white;
+    border-radius: 100%;
 }
 
 @media (min-width: 1024px) {
