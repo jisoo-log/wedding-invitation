@@ -75,8 +75,7 @@
       if (scenes[i].type === "sticky") {
         scenes[i].scrollHeight = scenes[i].heightRatio * window.innerHeight;
       } else if (scenes[i].type === "normal") {
-        // scenes[i].scrollHeight = scenes[i].objs.container.offsetHeight;
-        scenes[i].scrollHeight = 700;
+        scenes[i].scrollHeight = scenes[i].objs.container.offsetHeight;
       }
       scenes[i].objs.container.style.height = `${scenes[i].scrollHeight}px`;
     }
@@ -156,10 +155,10 @@
             values.messageA_translateY_in,
             currentYOffset
           )}%)`;
-          objs.messageB.style.opacity = calcValues(
-            values.messageB_opacity_in,
-            currentYOffset
-          );
+          // objs.messageB.style.opacity = calcValues(
+          //   values.messageB_opacity_in,
+          //   currentYOffset
+          // );
         } else {
           objs.canvas.style.opacity = calcValues(
             values.canvas_opacity2,
