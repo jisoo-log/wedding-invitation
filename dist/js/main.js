@@ -53,6 +53,14 @@
       objs: {
         container: document.querySelector("#section-3"),
       },
+    },
+    {
+      // 코로나
+      scrollHeight: 0,
+      type: "normal",
+      objs: {
+        container: document.querySelector("#section-4"),
+      },
     }
   ];
 
