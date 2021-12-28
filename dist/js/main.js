@@ -203,6 +203,25 @@
     playAnimation();
   }
 
+  function setDday() {
+    const today = new Date();
+    const weddingDay = new Date("2022-02-26");
+    const oneDay = 1000 * 60 * 60 * 24;
+    const diffInTime = weddingDay.getTime() - today.getTime();
+    const diffInDays = Math.round(diffInTime / oneDay);
+
+    let result;
+    if (diffInDays === 0) {
+      result = `바로 오늘 12시 30분에 결혼합니다`
+    } else if (diffInDays > 0) {
+      result = `종수와 지수의 결혼식이 ${diffInDays}일 남았습니다`
+    } else {
+      result = `종수와 지수의 결혼식이 ${-diffInDays}일 지났습니다`
+    }
+    let dday = document.querySelector("#d-day")
+    dday.innerText = result;
+  }
+
   window.addEventListener("scroll", () => {
     yOffset = window.pageYOffset;
     scrollLoop();
@@ -210,6 +229,7 @@
   window.addEventListener("load", () => {
     scenes[0].objs.context.drawImage(scenes[0].objs.videoImages[0], 0, 0);
     setLayout();
+    setDday();
   });
 
   window.addEventListener("resize", setLayout);
