@@ -244,6 +244,17 @@ body {
     margin-bottom: 5px;
 }
 
+#d-day {
+    text-align: center;
+    margin: 15px 0px;
+    padding: 5px 0px;
+    background-color: #FAF4F0;
+}
+
+.section-4__msg {
+    text-align: center;
+}
+
 @media (min-width: 1024px) {
     .message .main {
         font-size: 4rem;
