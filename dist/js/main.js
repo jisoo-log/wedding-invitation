@@ -61,7 +61,15 @@
       objs: {
         container: document.querySelector("#section-4"),
       },
-    }
+    },
+    {
+      // 계좌
+      scrollHeight: 0,
+      type: "normal",
+      objs: {
+        container: document.querySelector("#section-5"),
+      },
+    },
   ];
 
   const addZero = (num) => {
@@ -163,10 +171,10 @@
             values.messageA_translateY_in,
             currentYOffset
           )}%)`;
-          // objs.messageB.style.opacity = calcValues(
-          //   values.messageB_opacity_in,
-          //   currentYOffset
-          // );
+          objs.messageB.style.opacity = calcValues(
+            values.messageB_opacity_in,
+            currentYOffset
+          );
         } else {
           objs.canvas.style.opacity = calcValues(
             values.canvas_opacity2,
