@@ -57,19 +57,11 @@
       },
     },
     {
-      // 코로나
+      // 코로나 & 연락처
       scrollHeight: 0,
       type: "normal",
       objs: {
         container: document.querySelector("#section-4"),
-      },
-    },
-    {
-      // 계좌
-      scrollHeight: 0,
-      type: "normal",
-      objs: {
-        container: document.querySelector("#section-5"),
       },
     },
   ];
@@ -89,13 +81,16 @@
   setCanvasImages();
 
   const setLayout = () => {
+    console.log("setLayout");
     for (let i = 0; i < scenes.length; i++) {
       if (scenes[i].type === "sticky") {
         scenes[i].scrollHeight = scenes[i].heightRatio * window.innerHeight;
       } else if (scenes[i].type === "normal") {
+        console.log("normal : ", scenes[i].objs.container.offsetHeight)
         scenes[i].scrollHeight = scenes[i].objs.container.offsetHeight;
       }
       scenes[i].objs.container.style.height = `${scenes[i].scrollHeight}px`;
+      console.log("set height to : ",scenes[i].objs.container.style.height);
     }
 
     // 맨 처음 스크롤 위치 파악하여 화면 세팅해주는 부분
@@ -245,10 +240,12 @@
   }
 
   window.addEventListener("scroll", () => {
+    console.log("scroll");
     yOffset = window.pageYOffset;
     scrollLoop();
   });
   window.addEventListener("load", () => {
+    console.log("load");
     scenes[0].objs.context.drawImage(scenes[0].objs.videoImages[0], 0, 0);
     setLayout();
     setDday();
