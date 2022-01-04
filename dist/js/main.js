@@ -107,6 +107,7 @@
 
     const heightRatio = window.innerHeight / 1080;
     scenes[0].objs.canvas.style.transform = `translate3d(-50% ,-50% ,0) scale(${heightRatio})`;
+    document.querySelector(".loading").style.opacity = 0;
   };
 
   function calcValues(values, currentYOffset) {
@@ -234,5 +235,4 @@
   setTimeout(() => {
     setLayout();
   }, 1000);
-  // setLayout();
 })();
