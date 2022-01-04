@@ -20,7 +20,7 @@
       },
       values: {
         messageA_opacity_in: [0, 1, { start: 0, end: 0.05 }],
-        messageA_translateY_in: [0, -50, { start: 0.1, end: 0.2 }],
+        messageA_translateY_in: [0, -70, { start: 0.08, end: 0.2 }],
         messageA_opacity_out: [1, 0, { start: 0.9, end: 1 }],
         messageB_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
         messageB_opacity_out: [1, 0, { start: 0.9, end: 1 }],
@@ -80,7 +80,7 @@
     let imgElem;
     for (let i = 1; i <= scenes[0].values.videoImageCount; i++) {
       imgElem = new Image();
-      imgElem.src = `./images/out-${addZero(i)}.jpg`;
+      imgElem.src = `./canvas-images/out-${addZero(i)}.jpg`;
       scenes[0].objs.videoImages.push(imgElem);
     }
   };

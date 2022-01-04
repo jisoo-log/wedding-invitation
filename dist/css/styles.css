@@ -72,6 +72,16 @@ body {
     width: 100%;
 }
 
+#drawing {
+    display: flex;
+    width: 100%;
+}
+
+#drawing img {
+    width: 70%;
+    align-content: center;
+    margin: 0 auto;
+}
 
 #show-scene-0 #section-0 .sticky {
     display: block;
@@ -88,11 +98,6 @@ body {
     left: 50%;
     opacity: 0;
 }
-
-/* #video-canvas {
-    position: absolute;
-    opacity: 0;
-} */
 
 .images {
     width: 90%;
