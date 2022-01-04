@@ -251,7 +251,12 @@
     setDday();
   });
 
-  window.addEventListener("resize", setLayout);
+  window.addEventListener("resize", () => {
+    console.log(`현재 너비 : ${window.innerWidth} 높이 : ${window.innerHeight}`)
+    if (window.innerWidth > 717) {
+      setLayout();
+    }
+  });
 
   setLayout();
 })();
