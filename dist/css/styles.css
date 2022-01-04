@@ -102,6 +102,19 @@ footer {
   padding-top: 10vh;
 }
 
+.scroll {
+  display: block;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  bottom: 5vh;
+}
+
+.scroll img {
+  width: 30px;
+  height: 30px;
+}
+
 #show-scene-0 #section-0 .sticky {
   display: block;
 }

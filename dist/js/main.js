@@ -12,6 +12,7 @@
       type: "sticky",
       objs: {
         container: document.querySelector("#section-0"),
+        scroll: document.querySelector(".scroll"),
         messageA: document.querySelector("#section-0 .message.a"),
         messageB: document.querySelector("#section-0 .message.b"),
         canvas: document.querySelector("#video-canvas"),
@@ -20,6 +21,7 @@
         videoImages: [],
       },
       values: {
+        scroll_opacity_out: [1, 0, { start: 0, end: 0.05 }],
         messageA_opacity_in: [0, 1, { start: 0, end: 0.05 }],
         messageA_translateY_in: [0, -150, { start: 0.08, end: 0.2 }],
         messageA_opacity_out: [1, 0, { start: 0.9, end: 1 }],
@@ -151,6 +153,7 @@
         if (scrollRatio < 0.07) {
           objs.messageA.style.opacity = calcValues(values.messageA_opacity_in, currentYOffset);
           objs.drawing.style.opacity = calcValues(values.drawing_opacity_out, currentYOffset);
+          objs.scroll.style.opacity = calcValues(values.scroll_opacity_out, currentYOffset);
         } else if (scrollRatio < 0.25) {
           objs.canvas.style.opacity = calcValues(values.canvas_opacity1, currentYOffset);
           objs.messageA.style.transform = `translateY(${calcValues(
