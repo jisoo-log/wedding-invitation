@@ -15,12 +15,13 @@
         messageA: document.querySelector("#section-0 .message.a"),
         messageB: document.querySelector("#section-0 .message.b"),
         canvas: document.querySelector("#video-canvas"),
+        drawing: document.querySelector("#drawing"),
         context: document.querySelector("#video-canvas").getContext("2d"),
         videoImages: [],
       },
       values: {
         messageA_opacity_in: [0, 1, { start: 0, end: 0.05 }],
-        messageA_translateY_in: [0, -70, { start: 0.08, end: 0.2 }],
+        messageA_translateY_in: [0, -150, { start: 0.08, end: 0.2 }],
         messageA_opacity_out: [1, 0, { start: 0.9, end: 1 }],
         messageB_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
         messageB_opacity_out: [1, 0, { start: 0.9, end: 1 }],
@@ -28,6 +29,7 @@
         imageSequence: [0, 140],
         canvas_opacity1: [0, 0.8, { start: 0.1, end: 0.2 }],
         canvas_opacity2: [0.8, 0, { start: 0.9, end: 1 }],
+        drawing_opacity_out: [1, 0, { start: 0, end: 0.05 }]
       },
     },
     {
@@ -160,6 +162,10 @@
         if (scrollRatio < 0.07) {
           objs.messageA.style.opacity = calcValues(
             values.messageA_opacity_in,
+            currentYOffset
+          );
+          objs.drawing.style.opacity = calcValues(
+            values.drawing_opacity_out, 
             currentYOffset
           );
         } else if (scrollRatio < 0.25) {

@@ -43,7 +43,7 @@ body {
 .message .main {
     font-size: 3rem;
     font-weight: 700;
-    padding-top: 30vh;
+    padding-top: 65vh;
 }
 
 .message.b {
@@ -72,15 +72,15 @@ body {
     width: 100%;
 }
 
-#drawing {
-    display: flex;
+.drawing {
     width: 100%;
 }
 
-#drawing img {
+.drawing img{
+    display:block;
     width: 70%;
-    align-content: center;
     margin: 0 auto;
+    padding-top: 10vh;
 }
 
 #show-scene-0 #section-0 .sticky {
