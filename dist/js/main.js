@@ -7,7 +7,7 @@
   const scenes = [
     {
       // 메인 사진 스크롤
-      heightRatio: 5,
+      heightRatio: 2,
       scrollHeight: 0,
       type: "sticky",
       objs: {
