@@ -14,7 +14,7 @@ body {
   
 .section {
     position: relative;
-    padding-top: 30vh;
+    padding: 10px 0px;
     border: 1px solid #FAF4F0;
 }
 
@@ -32,6 +32,7 @@ body {
 .message .main {
     font-size: 3rem;
     font-weight: 700;
+    padding-top: 30vh;
 }
 
 .message.b {
@@ -108,42 +109,6 @@ body {
     height: 100%;
     object-fit: contain;
 }
-
-/* swiper */
-.swiper {
-    width: 100%;
-    padding-top: 15px;
-    padding-bottom: 40px;
-    background-color:#DF9889;
-}
-
-.swiper-slide {
-    background-position: center;
-    background-size: cover;
-    height: 500px;
-    width: auto;
-}
-
-.swiper-slide img {
-    display: block;
-    height: 100%;
-}
-
-.swiper-pagination-bullet {
-    background: gainsboro;
-    width: .4rem;
-    height: .4rem;
-    border-radius: .4rem;
-    opacity: 1;
-}
-
-.swiper-pagination-bullet-active {
-    background-color: lightyellow;
-    width: 2rem;
-    height: .4rem;
-    border-radius: .4rem;
-}
-/*swiper end*/
 
 #section-3 h1 {
     text-align: center;
@@ -251,7 +216,7 @@ body {
     color: #DF9889;
     font-size: 1.2rem;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 20px 0px;
 }
 
 .gray {
