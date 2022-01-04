@@ -29,7 +29,7 @@
         imageSequence: [0, 140],
         canvas_opacity1: [0, 0.8, { start: 0.1, end: 0.2 }],
         canvas_opacity2: [0.8, 0, { start: 0.9, end: 1 }],
-        drawing_opacity_out: [1, 0, { start: 0, end: 0.05 }]
+        drawing_opacity_out: [1, 0, { start: 0, end: 0.05 }],
       },
     },
     {
@@ -86,11 +86,11 @@
       if (scenes[i].type === "sticky") {
         scenes[i].scrollHeight = scenes[i].heightRatio * window.innerHeight;
       } else if (scenes[i].type === "normal") {
-        console.log("normal : ", scenes[i].objs.container.offsetHeight)
+        console.log("normal : ", scenes[i].objs.container.offsetHeight);
         scenes[i].scrollHeight = scenes[i].objs.container.offsetHeight;
       }
       scenes[i].objs.container.style.height = `${scenes[i].scrollHeight}px`;
-      console.log("set height to : ",scenes[i].objs.container.style.height);
+      console.log("set height to : ", scenes[i].objs.container.style.height);
     }
 
     // 맨 처음 스크롤 위치 파악하여 화면 세팅해주는 부분
@@ -119,13 +119,9 @@
       const partScrollStart = values[2].start * scrollHeight;
       const partScrollEnd = values[2].end * scrollHeight;
       const partScrollHeight = partScrollEnd - partScrollStart;
-      if (
-        currentYOffset >= partScrollStart &&
-        currentYOffset <= partScrollEnd
-      ) {
+      if (currentYOffset >= partScrollStart && currentYOffset <= partScrollEnd) {
         rv =
-          ((currentYOffset - partScrollStart) / partScrollHeight) *
-            (values[1] - values[0]) +
+          ((currentYOffset - partScrollStart) / partScrollHeight) * (values[1] - values[0]) +
           values[0];
       } else if (currentYOffset < partScrollStart) {
         rv = values[0];
@@ -147,48 +143,24 @@
 
     switch (currentScene) {
       case 0:
-        const sequence0 = Math.round(
-          calcValues(values.imageSequence, currentYOffset)
-        );
-        console.log(sequence0);
+        const sequence0 = Math.round(calcValues(values.imageSequence, currentYOffset));
         // 이미지, x, y
         objs.context.drawImage(objs.videoImages[sequence0], 0, 0);
 
         if (scrollRatio < 0.07) {
-          objs.messageA.style.opacity = calcValues(
-            values.messageA_opacity_in,
-            currentYOffset
-          );
-          objs.drawing.style.opacity = calcValues(
-            values.drawing_opacity_out, 
-            currentYOffset
-          );
+          objs.messageA.style.opacity = calcValues(values.messageA_opacity_in, currentYOffset);
+          objs.drawing.style.opacity = calcValues(values.drawing_opacity_out, currentYOffset);
         } else if (scrollRatio < 0.25) {
-          objs.canvas.style.opacity = calcValues(
-            values.canvas_opacity1,
-            currentYOffset
-          );
+          objs.canvas.style.opacity = calcValues(values.canvas_opacity1, currentYOffset);
           objs.messageA.style.transform = `translateY(${calcValues(
             values.messageA_translateY_in,
-            currentYOffset
+            currentYOffset,
           )}%)`;
-          objs.messageB.style.opacity = calcValues(
-            values.messageB_opacity_in,
-            currentYOffset
-          );
+          objs.messageB.style.opacity = calcValues(values.messageB_opacity_in, currentYOffset);
         } else {
-          objs.canvas.style.opacity = calcValues(
-            values.canvas_opacity2,
-            currentYOffset
-          );
-          objs.messageA.style.opacity = calcValues(
-            values.messageA_opacity_out,
-            currentYOffset
-          );
-          objs.messageB.style.opacity = calcValues(
-            values.messageB_opacity_out,
-            currentYOffset
-          );
+          objs.canvas.style.opacity = calcValues(values.canvas_opacity2, currentYOffset);
+          objs.messageA.style.opacity = calcValues(values.messageA_opacity_out, currentYOffset);
+          objs.messageB.style.opacity = calcValues(values.messageB_opacity_out, currentYOffset);
         }
         break;
     }
@@ -229,13 +201,13 @@
 
     let result;
     if (diffInDays === 0) {
-      result = `바로 오늘 12시 30분에 결혼합니다`
+      result = `바로 오늘 12시 30분에 결혼합니다`;
     } else if (diffInDays > 0) {
-      result = `종수와 지수의 결혼식이 ${diffInDays}일 남았습니다`
+      result = `종수와 지수의 결혼식이 ${diffInDays}일 남았습니다`;
     } else {
-      result = `종수와 지수의 결혼식이 ${-diffInDays}일 지났습니다`
+      result = `종수와 지수의 결혼식이 ${-diffInDays}일 지났습니다`;
     }
-    let dday = document.querySelector("#d-day")
+    let dday = document.querySelector("#d-day");
     dday.innerText = result;
   }
 
@@ -244,6 +216,7 @@
     yOffset = window.pageYOffset;
     scrollLoop();
   });
+
   window.addEventListener("load", () => {
     console.log("load");
     scenes[0].objs.context.drawImage(scenes[0].objs.videoImages[0], 0, 0);
@@ -252,11 +225,14 @@
   });
 
   window.addEventListener("resize", () => {
-    console.log(`현재 너비 : ${window.innerWidth} 높이 : ${window.innerHeight}`)
+    console.log(`resize 현재 너비 : ${window.innerWidth} 높이 : ${window.innerHeight}`);
     if (window.innerWidth > 717) {
       setLayout();
     }
   });
 
-  setLayout();
+  setTimeout(() => {
+    setLayout();
+  }, 1000);
+  // setLayout();
 })();
