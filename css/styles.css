@@ -17,7 +17,7 @@ a:active {
 }
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   background: white;
   color: rgb(29, 29, 31);
   /* letter-spacing: 0.05em; */
@@ -31,11 +31,62 @@ footer {
 
 .loading {
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   z-index: 999;
   background-color: white;
 }
+
+.loading-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.loading-box img {
+  display: block;
+  width: 40%;
+  margin: 10px;
+}
+
+.progress {
+  position: relative;
+  height: 5px;
+  width: 20%;
+  border: 2px solid #df9889;
+  border-radius: 5px;
+  margin: 10px;
+}
+.progress .color {
+  position: absolute;
+  background-color: #df9889;
+  width: 0px;
+  height: 5px;
+  border-radius: 5px;
+  animation: progress 3s linear;    
+}
+@keyframes progress{
+  0%{
+    width: 0%;
+  }
+  25%{
+      width: 50%;
+  }
+  50%{
+      width: 75%;
+  }
+  75%{
+      width: 85%;
+  }
+  100%{
+      width: 100%;
+  }
+};
 
 .container {
   -webkit-overflow-scrolling: touch;
@@ -161,6 +212,10 @@ footer {
 
 #section-3 h1 {
   text-align: center;
+}
+
+#section-1 {
+  background-color: white;
 }
 
 .section-1__img {

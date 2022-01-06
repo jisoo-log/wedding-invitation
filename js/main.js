@@ -7,7 +7,7 @@
   const scenes = [
     {
       // 메인 사진 스크롤
-      heightRatio: 2,
+      heightRatio: 3,
       scrollHeight: 0,
       type: "sticky",
       objs: {
@@ -24,13 +24,13 @@
         scroll_opacity_out: [1, 0, { start: 0, end: 0.05 }],
         messageA_opacity_in: [0, 1, { start: 0, end: 0.05 }],
         messageA_translateY_in: [0, -150, { start: 0.08, end: 0.2 }],
-        messageA_opacity_out: [1, 0, { start: 0.9, end: 1 }],
+        messageA_opacity_out: [1, 0, { start: 0.7, end: 0.8 }],
         messageB_opacity_in: [0, 1, { start: 0.1, end: 0.2 }],
-        messageB_opacity_out: [1, 0, { start: 0.9, end: 1 }],
+        messageB_opacity_out: [1, 0, { start: 0.6, end: 0.7 }],
         videoImageCount: 141,
         imageSequence: [0, 140],
         canvas_opacity1: [0, 0.8, { start: 0.1, end: 0.2 }],
-        canvas_opacity2: [0.8, 0, { start: 0.9, end: 1 }],
+        canvas_opacity2: [0.8, 0, { start: 0.7, end: 0.9 }],
         drawing_opacity_out: [1, 0, { start: 0, end: 0.05 }],
       },
     },
@@ -82,7 +82,7 @@
   };
   setCanvasImages();
 
-  const setLayout = () => {
+  const setLayout = (loading = true) => {
     console.log("setLayout");
     for (let i = 0; i < scenes.length; i++) {
       if (scenes[i].type === "sticky") {
@@ -109,7 +109,12 @@
 
     const heightRatio = window.innerHeight / 1080;
     scenes[0].objs.canvas.style.transform = `translate3d(-50% ,-50% ,0) scale(${heightRatio})`;
-    document.querySelector(".loading").style.opacity = 0;
+    
+    // 로딩이 끝난 이후 세팅
+    if (!loading) {
+      document.querySelector(".loading").style.display = "none";
+      document.querySelector("body").style.overflow = "auto";
+    }
   };
 
   function calcValues(values, currentYOffset) {
@@ -236,6 +241,7 @@
   });
 
   setTimeout(() => {
-    setLayout();
-  }, 1000);
+    const loading = false;
+    setLayout(loading);
+  }, 3000);
 })();
