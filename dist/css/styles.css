@@ -17,7 +17,7 @@ a:active {
 }
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   background: white;
   color: rgb(29, 29, 31);
   /* letter-spacing: 0.05em; */
@@ -212,6 +212,10 @@ footer {
 
 #section-3 h1 {
   text-align: center;
+}
+
+#section-1 {
+  background-color: white;
 }
 
 .section-1__img {
