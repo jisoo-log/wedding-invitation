@@ -82,7 +82,7 @@
   };
   setCanvasImages();
 
-  const setLayout = () => {
+  const setLayout = (loading = true) => {
     console.log("setLayout");
     for (let i = 0; i < scenes.length; i++) {
       if (scenes[i].type === "sticky") {
@@ -109,7 +109,9 @@
 
     const heightRatio = window.innerHeight / 1080;
     scenes[0].objs.canvas.style.transform = `translate3d(-50% ,-50% ,0) scale(${heightRatio})`;
-    document.querySelector(".loading").style.display = "none";
+    if (!loading) {
+      document.querySelector(".loading").style.display = "none";
+    }
   };
 
   function calcValues(values, currentYOffset) {
@@ -236,6 +238,7 @@
   });
 
   setTimeout(() => {
-    setLayout();
-  }, 1000);
+    const loading = false;
+    setLayout(loading);
+  }, 3000);
 })();
