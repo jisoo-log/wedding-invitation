@@ -1,329 +1,401 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>결혼합니다</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="css/reset.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
 
-  <body>
-    <div class="loading">
-      <div class="loading-box">
-        <p>김종수 💌 이지수</p>
-        <img src="images/heart-image.png" />
-        <p>로딩중...</p>
-        <div class="progress">
-          <div class="color"></div>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>결혼합니다</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <div class="loading">
+    <div class="loading-box">
+      <p>김종수 💌 이지수</p>
+      <img src="images/heart-image.png" />
+      <p>로딩중...</p>
+      <div class="progress">
+        <div class="color"></div>
       </div>
     </div>
-    <div class="container">
-      <section class="section" id="section-0">
-        <div class="sticky drawing">
-          <img id="drawing" src="images/drawing.png" />
+  </div>
+  <div class="container">
+    <section class="section" id="section-0">
+      <div class="sticky drawing">
+        <img id="drawing" src="images/drawing.png" />
+      </div>
+      <div class="sticky scroll">
+        <p>스크롤</p>
+        <img src="icon/arrow-down.png" />
+      </div>
+      <div class="sticky sticky-canvas">
+        <canvas id="video-canvas" width="720" height="1280"></canvas>
+      </div>
+      <div class="sticky message a">
+        <p class="main">결혼합니다</p>
+      </div>
+      <div class="sticky message b">
+        <div class="sub">
+          <p class="gray">2월 26일 토요일 12:30</p>
+          <p>엘루체컨벤션 6층 스텔라하우스</p>
         </div>
-        <div class="sticky scroll">
-          <p>스크롤</p>
-          <img src="icon/arrow-down.png"/>
+      </div>
+    </section>
+    <section class="section" id="section-1">
+      <p class="title">초대합니다</p>
+      <div class="msg">
+        <p>차곡차곡 눈처럼 쌓아온 사랑이</p>
+        <p>어느덧 네 번째 겨울을 맞아</p>
+        <p>이제는 평생을 약속하려 합니다</p>
+        <p>저희 두 사람의 새로운 출발을</p>
+        <p>격려해주시고 축복해주시면 감사하겠습니다.</p>
+      </div>
+      <div class="section-1__img">
+        <img src="images/image5-2.jpg" />
+      </div>
+      <div class="section-1__name">
+        <div>
+          <span>김동현 · 이문숙 </span>
+          <span class="gray medium">의 장남</span>
+          <span>종수</span>
         </div>
-        <div class="sticky sticky-canvas">
-          <canvas id="video-canvas" width="720" height="1280"></canvas>
+        <div>
+          <span>이근형 · 박현옥 </span>
+          <span class="gray medium">의 차녀</span>
+          <span>지수</span>
         </div>
-        <div class="sticky message a">
-          <p class="main">결혼합니다</p>
+      </div>
+      <div class="calendar">
+        <div class="year-month title">
+          <span>2022. 02</span>
         </div>
-        <div class="sticky message b">
-          <div class="sub">
-            <p class="gray">2월 26일 토요일 12:30</p>
-            <p>엘루체컨벤션 6층 스텔라하우스</p>
+        <div class="calendar__main">
+          <div class="days">
+            <div class="day">일</div>
+            <div class="day">월</div>
+            <div class="day">화</div>
+            <div class="day">수</div>
+            <div class="day">목</div>
+            <div class="day">금</div>
+            <div class="day">토</div>
+          </div>
+          <div class="line"></div>
+          <div class="dates">
+            <div class="date"></div>
+            <div class="date"></div>
+            <div class="date">1</div>
+            <div class="date">2</div>
+            <div class="date">3</div>
+            <div class="date">4</div>
+            <div class="date">5</div>
+            <div class="date">6</div>
+            <div class="date">7</div>
+            <div class="date">8</div>
+            <div class="date">9</div>
+            <div class="date">10</div>
+            <div class="date">11</div>
+            <div class="date">12</div>
+            <div class="date">13</div>
+            <div class="date">14</div>
+            <div class="date">15</div>
+            <div class="date">16</div>
+            <div class="date">17</div>
+            <div class="date">18</div>
+            <div class="date">19</div>
+            <div class="date">20</div>
+            <div class="date">21</div>
+            <div class="date">22</div>
+            <div class="date">23</div>
+            <div class="date">24</div>
+            <div class="date">25</div>
+            <div class="date selected">26</div>
+            <div class="date">27</div>
+            <div class="date">28</div>
           </div>
         </div>
-      </section>
-      <section class="section" id="section-1">
-        <p class="title">초대합니다</p>
-        <div class="msg">
-          <p>차곡차곡 눈처럼 쌓아온 사랑이</p>
-          <p>어느덧 네 번째 겨울을 맞아</p>
-          <p>이제는 평생을 약속하려 합니다</p>
-          <p>저희 두 사람의 새로운 출발을</p>
-          <p>격려해주시고 축복해주시면 감사하겠습니다.</p>
+      </div>
+      <div id="d-day"></div>
+    </section>
+    <section class="section" id="section-2">
+      <p class="title">갤러리</p>
+      <div class="images">
+        <div class="images1">
+          <img src="images/image4-2.jpg" />
+          <img src="images/image0.jpg" />
+          <img src="images/image1.jpg" />
+          <img src="images/image10.jpg" />
+          <img src="images/image6.jpg" />
         </div>
-        <div class="section-1__img">
-          <img src="images/image5-2.jpg" />
+        <div class="images2">
+          <img src="images/image7.jpg" />
+          <img src="images/image9.jpg" />
+          <img src="images/image3.jpg" />
+          <img src="images/image8.jpg" />
         </div>
-        <div class="section-1__name">
-          <div>
-            <span>김동현 · 이문숙 </span>
-            <span class="gray medium">의 장남</span>
-            <span>종수</span>
-          </div>
-          <div>
-            <span>이근형 · 박현옥 </span>
-            <span class="gray medium">의 차녀</span>
-            <span>지수</span>
-          </div>
-        </div>
-        <div class="calendar">
-          <div class="year-month title">
-            <span>2022. 02</span>
-          </div>
-          <div class="calendar__main">
-            <div class="days">
-              <div class="day">일</div>
-              <div class="day">월</div>
-              <div class="day">화</div>
-              <div class="day">수</div>
-              <div class="day">목</div>
-              <div class="day">금</div>
-              <div class="day">토</div>
-            </div>
-            <div class="line"></div>
-            <div class="dates">
-              <div class="date"></div>
-              <div class="date"></div>
-              <div class="date">1</div>
-              <div class="date">2</div>
-              <div class="date">3</div>
-              <div class="date">4</div>
-              <div class="date">5</div>
-              <div class="date">6</div>
-              <div class="date">7</div>
-              <div class="date">8</div>
-              <div class="date">9</div>
-              <div class="date">10</div>
-              <div class="date">11</div>
-              <div class="date">12</div>
-              <div class="date">13</div>
-              <div class="date">14</div>
-              <div class="date">15</div>
-              <div class="date">16</div>
-              <div class="date">17</div>
-              <div class="date">18</div>
-              <div class="date">19</div>
-              <div class="date">20</div>
-              <div class="date">21</div>
-              <div class="date">22</div>
-              <div class="date">23</div>
-              <div class="date">24</div>
-              <div class="date">25</div>
-              <div class="date selected">26</div>
-              <div class="date">27</div>
-              <div class="date">28</div>
-            </div>
-          </div>
-        </div>
-        <div id="d-day"></div>
-      </section>
-      <section class="section" id="section-2">
-        <p class="title">갤러리</p>
-        <div class="images">
-          <div class="images1">
-            <img src="images/image4-2.jpg" />
-            <img src="images/image0.jpg" />
-            <img src="images/image1.jpg" />
-            <img src="images/image10.jpg" />
-            <img src="images/image6.jpg" />
-          </div>
-          <div class="images2">
-            <img src="images/image7.jpg" />
-            <img src="images/image9.jpg" />
-            <img src="images/image3.jpg" />
-            <img src="images/image8.jpg" />
-          </div>
-        </div>
-      </section>
-      <section class="section" id="section-3">
-        <div class="section-3__msg">
-          <p class="title">오시는 길</p>
-          <p>엘루체컨벤션 6F 스텔라하우스</p>
-          <p class="gray">서울 서초 신반포로 23</p>
-        </div>
-        <div
-          id="map"
-          style="
+      </div>
+    </section>
+    <section class="section" id="section-3">
+      <div class="section-3__msg">
+        <p class="title">오시는 길</p>
+        <p>엘루체컨벤션 6F 스텔라하우스</p>
+        <p class="gray">서울 서초 신반포로 23</p>
+      </div>
+      <div id="map" style="
             width: 100%;
             height: 300px;
             border: 1px solid gainsboro;
             left: 0;
             right: 0;
             margin: auto;
-          "
-        ></div>
-        <code id="snippet" class="snippet"></code>
-        <div class="traffic">
-          <p class="mini-title">지하철</p>
-          <p>9호선 구반포역 3번 출구 바로 앞</p>
-          <p>(급행열차 무정차, 일반열차 이용)</p>
-          <p class="mini-title">버스</p>
-          <p>구반포역 하차</p>
-          <p>간선버스 : 148, 360, 362, 406, 452,540, 640, 643, 8541</p>
-          <p>지선버스 : 3012, 4212, 4318, 6411</p>
-          <p>광역버스 : 9408, 6000, 6020</p>
-          <p>경기버스 : 9500, 9501, 9502, 9802</p>
-          <p class="mini-title">자가용</p>
-          <p>예식장 건물 내 지하 주차장 이용 가능</p>
-          <p>※대중교통을 이용하시면 더욱 편리합니다</p>
-        </div>
-      </section>
-      <section class="section" id="section-4">
-        <p class="title">코로나19 안내</p>
-        <div class="msg">
-          <p>코로나 종식을 예측할 수 없어</p>
-          <p>결혼식을 예정대로 진행하게 되었습니다.</p>
-          <p>참석에 대한 부담 갖지 마시고</p>
-          <p>멀리서 축하해주시는 마음</p>
-          <p>감사히 받겠습니다.</p>
-        </div>
-        <p class="title">마음 전하실 곳</p>
-        <div class="contact-container">
-          <div class="contact-info">
-            <span class="relation">신랑</span>
-            <span class="name">김종수</span>
-            <div class="icon-container">
-              <a href="tel:01044473197" class="tel-button">
-                <img src="icon/call-icon.png" />
-              </a>
-              <a href="sms:01044473197" class="sms-button">
-                <img src="icon/text-icon.png" />
-              </a>
-            </div>
-          </div>
-          <div class="contact-info">
-            <span class="relation">신부</span>
-            <span class="name">이지수</span>
-            <div class="icon-container">
-              <a href="tel:01055142312" class="tel-button">
-                <img src="icon/call-icon.png" />
-              </a>
-              <a href="sms:01055142312" class="sms-button">
-                <img src="icon/text-icon.png" />
-              </a>
-            </div>
+          "></div>
+      <code id="snippet" class="snippet"></code>
+      <div class="traffic">
+        <p class="mini-title">지하철</p>
+        <p>9호선 구반포역 3번 출구 바로 앞</p>
+        <p>(급행열차 무정차, 일반열차 이용)</p>
+        <p class="mini-title">버스</p>
+        <p>구반포역 하차</p>
+        <p>간선버스 : 148, 360, 362, 406, 452,540, 640, 643, 8541</p>
+        <p>지선버스 : 3012, 4212, 4318, 6411</p>
+        <p>광역버스 : 9408, 6000, 6020</p>
+        <p>경기버스 : 9500, 9501, 9502, 9802</p>
+        <p class="mini-title">자가용</p>
+        <p>예식장 건물 내 지하 주차장 이용 가능</p>
+        <p>※대중교통을 이용하시면 더욱 편리합니다</p>
+      </div>
+    </section>
+    <section class="section" id="section-4">
+      <p class="title">코로나19 안내</p>
+      <div class="msg">
+        <p>코로나 종식을 예측할 수 없어</p>
+        <p>결혼식을 예정대로 진행하게 되었습니다.</p>
+        <p>참석에 대한 부담 갖지 마시고</p>
+        <p>멀리서 축하해주시는 마음</p>
+        <p>감사히 받겠습니다.</p>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <span class="relation">신랑</span>
+          <span class="name">김종수</span>
+          <div class="icon-container">
+            <a href="tel:01044473197" class="tel-button">
+              <img src="icon/call-icon.png" />
+            </a>
+            <a href="sms:01044473197" class="sms-button">
+              <img src="icon/text-icon.png" />
+            </a>
           </div>
         </div>
-        <div class="relation-container">
-          <p class="relation-title">신랑측 혼주</p>
-          <p class="relation-title">신부측 혼주</p>
-        </div>
-        <div class="contact-container">
-          <div class="contact-info">
-            <span class="relation">아버지</span>
-            <span class="name">김동현</span>
-            <div class="icon-container">
-              <a href="tel:01025943197" class="tel-button">
-                <img src="icon/call-icon.png" />
-              </a>
-              <a href="sms:01025943197" class="sms-button">
-                <img src="icon/text-icon.png" />
-              </a>
-            </div>
-          </div>
-          <div class="contact-info">
-            <span class="relation">아버지</span>
-            <span class="name">이근형</span>
-            <div class="icon-container">
-              <a href="tel:01065901853" class="tel-button">
-                <img src="icon/call-icon.png" />
-              </a>
-              <a href="sms:01065901853" class="sms-button">
-                <img src="icon/text-icon.png" />
-              </a>
-            </div>
+        <div class="contact-info">
+          <span class="relation">신부</span>
+          <span class="name">이지수</span>
+          <div class="icon-container">
+            <a href="tel:01055142312" class="tel-button">
+              <img src="icon/call-icon.png" />
+            </a>
+            <a href="sms:01055142312" class="sms-button">
+              <img src="icon/text-icon.png" />
+            </a>
           </div>
         </div>
-        <div class="contact-container">
-          <div class="contact-info">
-            <span class="relation">어머니</span>
-            <span class="name">이문숙</span>
-            <div class="icon-container">
-              <a href="tel:01093013197" class="tel-button">
-                <img src="icon/call-icon.png" />
-              </a>
-              <a href="sms:01093013197" class="sms-button">
-                <img src="icon/text-icon.png" />
-              </a>
-            </div>
-          </div>
-          <div class="contact-info">
-            <span class="relation">어머니</span>
-            <span class="name">박현옥</span>
-            <div class="icon-container">
-              <a href="tel:01054602312" class="tel-button">
-                <img src="icon/call-icon.png" />
-              </a>
-              <a href="sms:01054602312" class="sms-button">
-                <img src="icon/text-icon.png" />
-              </a>
-            </div>
+      </div>
+      <div class="relation-container">
+        <p class="relation-title">신랑측 혼주</p>
+        <p class="relation-title">신부측 혼주</p>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <span class="relation">아버지</span>
+          <span class="name">김동현</span>
+          <div class="icon-container">
+            <a href="tel:01025943197" class="tel-button">
+              <img src="icon/call-icon.png" />
+            </a>
+            <a href="sms:01025943197" class="sms-button">
+              <img src="icon/text-icon.png" />
+            </a>
           </div>
         </div>
-      </section>
-      <footer></footer>
-    </div>
-    <script src="js/main.js"></script>
-    <script
-      type="text/javascript"
-      src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wn1alsk6wi"
-    ></script>
-    <script id="code">
-      var elluce = new naver.maps.LatLng(37.50180355734507, 126.98714909796672);
-      var map = new naver.maps.Map("map", {
-        center: new naver.maps.LatLng(37.50180355734507, 126.98714909796672),
-        zoom: 17,
-        minZoom: 8, //지도의 최소 줌 레벨
-        zoomControl: true, //줌 컨트롤의 표시 여부
-        zoomControlOptions: {
-          //줌 컨트롤의 옵션
-          position: naver.maps.Position.TOP_RIGHT,
-        },
-      });
-      var marker = new naver.maps.Marker({
-        icon: {
-          url: "./icon/marker2.png",
-          scaledSize: new naver.maps.Size(20, 32),
-          origin: new naver.maps.Point(0, 0),
-        },
-        position: elluce,
-        map: map,
-      });
+        <div class="contact-info">
+          <span class="relation">아버지</span>
+          <span class="name">이근형</span>
+          <div class="icon-container">
+            <a href="tel:01065901853" class="tel-button">
+              <img src="icon/call-icon.png" />
+            </a>
+            <a href="sms:01065901853" class="sms-button">
+              <img src="icon/text-icon.png" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <span class="relation">어머니</span>
+          <span class="name">이문숙</span>
+          <div class="icon-container">
+            <a href="tel:01093013197" class="tel-button">
+              <img src="icon/call-icon.png" />
+            </a>
+            <a href="sms:01093013197" class="sms-button">
+              <img src="icon/text-icon.png" />
+            </a>
+          </div>
+        </div>
+        <div class="contact-info">
+          <span class="relation">어머니</span>
+          <span class="name">박현옥</span>
+          <div class="icon-container">
+            <a href="tel:01054602312" class="tel-button">
+              <img src="icon/call-icon.png" />
+            </a>
+            <a href="sms:01054602312" class="sms-button">
+              <img src="icon/text-icon.png" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="section-5">
+      <div class="section-5__img">
+        <img src="images/image12.jpg" />
+      </div>
+      <p class="title">마음 전하실 곳</p>
+      <div class="account-container">
+        <p class="account-title">신랑측 계좌번호</p>
+        <div class="account-detail-container">
+          <span class="account-detail">케이뱅크 <strong>100-143-000018</strong> 김종수</span>
+          <button class="copy-button" onclick="button_click(0)">복사</button>
+        </div>
+        <div class="account-detail-container">
+          <span class="account-detail">케이뱅크 <strong>100-139-172097</strong> 김동현</span>
+          <button class="copy-button" onclick="button_click(1)">복사</button>
+        </div>
+        <div class="account-detail-container">
+          <span class="account-detail">경남은행 <strong>626-22-0031276</strong> 이문숙</span>
+          <button class="copy-button" onclick="button_click(2)">복사</button>
+        </div>
+      </div>
+      <div class="account-container">
+        <p class="account-title">신부측 계좌번호</p>
+        <div class="account-detail-container">
+          <span class="account-detail">국민은행 <strong>690102-00-008274</strong> 이지수</span>
+          <button class="copy-button" onclick="button_click(3)">복사</button>
+        </div>
+        <div class="account-detail-container">
+          <span class="account-detail">신한은행 <strong>110-532-068062</strong> 이근형</span>
+          <button class="copy-button" onclick="button_click(4)">복사</button>
+        </div>
+      </div>
+    </section>
+    <div id="toast"></div>
+    <footer></footer>
+  </div>
+  <script src="js/main.js"></script>
+  <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wn1alsk6wi"></script>
+  <script id="code">
+    var elluce = new naver.maps.LatLng(37.50180355734507, 126.98714909796672);
+    var map = new naver.maps.Map("map", {
+      center: new naver.maps.LatLng(37.50180355734507, 126.98714909796672),
+      zoom: 17,
+      minZoom: 8, //지도의 최소 줌 레벨
+      zoomControl: true, //줌 컨트롤의 표시 여부
+      zoomControlOptions: {
+        //줌 컨트롤의 옵션
+        position: naver.maps.Position.TOP_RIGHT,
+      },
+    });
+    var marker = new naver.maps.Marker({
+      icon: {
+        url: "./icon/marker2.png",
+        scaledSize: new naver.maps.Size(20, 32),
+        origin: new naver.maps.Point(0, 0),
+      },
+      position: elluce,
+      map: map,
+    });
 
-      var contentString = [
-        '<div class="iw_inner" style="padding:5px; margin: 5px 0px 5px 0px; width: 120px; height: 30px; text-align: center; ">',
-        '   <p style="foint-size: 2rem; margin: 0;">엘루체컨벤션</p>',
-        "</div>",
-      ].join("");
+    var contentString = [
+      '<div class="iw_inner" style="padding:5px; margin: 5px 0px 5px 0px; width: 120px; height: 30px; text-align: center; ">',
+      '   <p style="foint-size: 2rem; margin: 0;">엘루체컨벤션</p>',
+      "</div>",
+    ].join("");
 
-      var infowindow = new naver.maps.InfoWindow({
-        content: contentString,
-        maxWidth: 200,
-        height: 50,
-        backgroundColor: "white",
-        borderColor: "#ABAAA9",
-        borderWidth: 1,
-        disableAnchor: true,
-        textAlign: "center",
-        margin: "auto",
+    var infowindow = new naver.maps.InfoWindow({
+      content: contentString,
+      maxWidth: 200,
+      height: 50,
+      backgroundColor: "white",
+      borderColor: "#ABAAA9",
+      borderWidth: 1,
+      disableAnchor: true,
+      textAlign: "center",
+      margin: "auto",
 
-        pixelOffset: new naver.maps.Point(0, -5),
-      });
+      pixelOffset: new naver.maps.Point(0, -5),
+    });
 
-      naver.maps.Event.addListener(marker, "click", function (e) {
-        if (infowindow.getMap()) {
-          infowindow.close();
-        } else {
-          infowindow.open(map, marker);
-        }
-      });
+    naver.maps.Event.addListener(marker, "click", function (e) {
+      if (infowindow.getMap()) {
+        infowindow.close();
+      } else {
+        infowindow.open(map, marker);
+      }
+    });
 
-      infowindow.open(map, marker);
-    </script>
-  </body>
+    infowindow.open(map, marker);
+  </script>
+  <script>
+    function button_click(id) {
+      let account;
+      switch (id) {
+        case 0:
+          account = "100-143-000018"
+          break;
+        case 1:
+          account = "100-139-172097"
+          break;
+        case 2:
+          account = "626-22-0031276"
+          break;
+        case 3:
+          account = "690102-00-008274"
+          break;
+        case 4:
+          account = "110-532-068062"
+          break;
+
+      }
+      const t = document.createElement("textarea");
+      document.body.appendChild(t);
+      t.value = account;
+      t.select();
+      document.execCommand("copy");
+      document.body.removeChild(t);
+      toast("복사되었습니다");
+
+    }
+
+    let removeToast;
+
+    function toast(string) {
+      const toast = document.getElementById("toast");
+
+      toast.classList.contains("reveal") ?
+        (clearTimeout(removeToast), removeToast = setTimeout(function () {
+          document.getElementById("toast").classList.remove("reveal")
+        }, 1000)) :
+        removeToast = setTimeout(function () {
+          document.getElementById("toast").classList.remove("reveal")
+        }, 1000)
+      toast.classList.add("reveal"),
+        toast.innerText = string
+    }
+  </script>
+</body>
+
 </html>
