@@ -66,6 +66,14 @@
         container: document.querySelector("#section-4"),
       },
     },
+    {
+      // 사진 && 계좌번호
+      scrollHeight: 0,
+      type: "normal",
+      objs: {
+        container: document.querySelector("#section-5"),
+      },
+    },
   ];
 
   const addZero = (num) => {
@@ -109,7 +117,7 @@
 
     const heightRatio = window.innerHeight / 1080;
     scenes[0].objs.canvas.style.transform = `translate3d(-50% ,-50% ,0) scale(${heightRatio})`;
-    
+
     // 로딩이 끝난 이후 세팅
     if (!loading) {
       document.querySelector(".loading").style.display = "none";
@@ -243,5 +251,5 @@
   setTimeout(() => {
     const loading = false;
     setLayout(loading);
-  }, 3000);
+  }, 500);
 })();

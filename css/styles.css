@@ -68,25 +68,25 @@ footer {
   width: 0px;
   height: 5px;
   border-radius: 5px;
-  animation: progress 3s linear;    
+  animation: progress 3s linear;
 }
-@keyframes progress{
-  0%{
+@keyframes progress {
+  0% {
     width: 0%;
   }
-  25%{
-      width: 50%;
+  25% {
+    width: 50%;
   }
-  50%{
-      width: 75%;
+  50% {
+    width: 75%;
   }
-  75%{
-      width: 85%;
+  75% {
+    width: 85%;
   }
-  100%{
-      width: 100%;
+  100% {
+    width: 100%;
   }
-};
+}
 
 .container {
   -webkit-overflow-scrolling: touch;
@@ -333,10 +333,6 @@ footer {
   background-color: #faf4f0;
 }
 
-#section-5 {
-  margin: 0px 30px;
-}
-
 .contact-container {
   display: flex;
   flex-direction: row;
@@ -385,6 +381,73 @@ footer {
 .sms-button img {
   width: 35px;
   height: 35px;
+}
+
+#section-5 {
+  width: 100%;
+}
+
+.section-5__img img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.account-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 10px;
+  margin: 10px;
+  border: 1px solid #faf4f0;
+  /* background-color: #faf4f0; */
+}
+
+.account-detail-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.account-title {
+  color: #df9889;
+}
+
+.account-detail {
+  font-size: 0.9rem;
+  line-height: 2.5rem;
+}
+
+.copy-button {
+  background-color: black;
+  color: white;
+  width: 50px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+#toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  padding: 10px 15px;
+  transform: translate(-50%, 10px);
+  border-radius: 30px;
+  overflow: hidden;
+  font-size: 0.8rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s, transform 1s;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  z-index: 10000;
+}
+
+#toast.reveal {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
 }
 
 @media (min-width: 1024px) {
