@@ -251,5 +251,5 @@
   setTimeout(() => {
     const loading = false;
     setLayout(loading);
-  }, 500);
+  }, 3000);
 })();
