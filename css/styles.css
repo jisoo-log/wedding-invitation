@@ -210,6 +210,15 @@ footer {
   margin: 3px;
 }
 
+.notice {
+  margin: 20px 20px;
+}
+
+.notice p {
+  text-align: start;
+  font-size: 0.9rem;
+}
+
 #section-3 h1 {
   text-align: center;
 }
